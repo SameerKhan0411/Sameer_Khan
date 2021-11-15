@@ -52,7 +52,7 @@ public class HandleOptions {
 			FileOperations.createFile(fileToAdd, sc);
 			break;
 		case 2:
-			// File/Folder delete
+			
 			System.out.println("Enter the name of the file to be deleted from \"main\" folder");
 			String fileToDelete = sc.next();
 			FileOperations.createMainFolderIfNotPresent("main");
@@ -64,24 +64,24 @@ public class HandleOptions {
 			if (idx != 0) {
 		FileOperations.deleteFileRecursively(filesToDelete.get(idx - 1));
 			} else {
-			// If idx == 0, delete all files displayed for the name
+			
 			for (String path : filesToDelete) {
 			FileOperations.deleteFileRecursively(path);
 					}
 			}
 			break;
 		case 3:
-			// File/Folder Search
+			
 			System.out.println("Enter the name of the file to be searched from \"main\" folder");
 			String fileName = sc.next();
 			FileOperations.createMainFolderIfNotPresent("main");
 			FileOperations.displayFileLocations(fileName, "main");
 			break;
 		case 4:
-			// Go to Previous menu
+			
 			return;
 		case 5:
-			// Exit
+			
 			System.out.println("Program exited successfully.");
 			running = false;
 			sc.close();
