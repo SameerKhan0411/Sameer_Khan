@@ -22,10 +22,9 @@ public class FileOperations {
 	}
 	public static void displayAllFiles(String path) {
 		FileOperations.createMainFolderIfNotPresent("main");
-		// All required files and folders inside "main" folder relative to current
-		// folder
+		
 		System.out.println("Displaying all files with directory structure in ascending order\n");
-		// listFilesInDirectory displays files along with folder structure
+		
 		List<String> filesListNames = FileOperations.listFilesInDirectory(path, 0, new ArrayList<String>());
 		System.out.println("Displaying all files in ascending order\n");
 		Collections.sort(filesListNames);
@@ -43,7 +42,7 @@ public class FileOperations {
 				System.out.print(" ".repeat(indentationCount * 2));
 				if (file.isDirectory()) {
 					System.out.println("`-- " + file.getName());
-					// Recursively indent and display the files
+					
 					fileListNames.add(file.getName());
 					listFilesInDirectory(file.getAbsolutePath(), indentationCount + 1, fileListNames);
 					} else {
@@ -105,8 +104,7 @@ public class FileOperations {
 				if (file.getName().startsWith(fileName)) {
 					fileListNames.add(file.getAbsolutePath());
 					}
-				// Need to search in directories separately to ensure all files of required
-				// fileName are searched
+				
 				if (file.isDirectory()) {
 					searchFileRecursively(file.getAbsolutePath(), fileName, fileListNames);
 					}
